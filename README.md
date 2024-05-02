@@ -1,26 +1,27 @@
-# 약속의 8회는 정말 있을까?
-야구에는 '약속의 8회' 라는 단어가 있다. 지고 있는 팀이 8회 말이 되면 역전하는 경우가 종종 있는데, 이때 약속의 8회라는 단어를 자주 사용한다.
-타자들이 8회만 되면 귀신같이 점수를 잘 내는건지, 아니면 우리가 기억하는 장면이 그런 장면인건지 알아보기 위해 데이터 분석을 해보자.
+# 수면 건강과 생활 습관 간의 연관성 분석
+keggle에 존재하는 수면 건강과 생활 습관에 대한 데이터를 통해 다양한 생활 습관이 수면의 질에 미치는 영향을 분석하고자 합니다. 
+특정 생활 습관 패턴이 좋은 수면을 촉진하거나 방해하는 요소를 파악하여 보다 건강한 생활을 위한 가이드라인을 제안하는 것이 목표입니다.
+## 데이터 설명 및 분석 목적
+- Person ID: 각 참가자의 고유 식별자
+- Gender, Age, Occupation: 참가자의 성별, 나이, 직업
+- Sleep Duration: 하루 평균 수면 시간
+- Quality of Sleep: 수면의 질을 1에서 10까지(최악의 경우가 1) 평가
+- Physical Activity Level: 하루에 신체 활동에 사용하는 시간(minutes/day)
+- Stress Level: 개인이 경험하는 주관적인 stress level을 1에서 10까지(최악의 경우가 10) 평가
+- BMI Category: Underweight, Normal, Overweight로 BMI에 따라 분류
+- Blood Pressure (systolic/diastolic): 개인의 혈압(최고 혈압/최저 혈압)
+- Heart Rate (bpm): 개인의 심장 박동을 bpm으로 표현
+- Daily Steps: 개인의 일일 걸음수
+- Sleep Disorder: 수면 장애의 유무(None, Insomnia, Sleep Apnea)
 
-1. 데이터 세트 설명
-데이터 출처: MLB (Major League Baseball) 등 공식 야구 리그 데이터, 스포츠 통계 웹사이트
-데이터 필드:
-게임 ID
-팀명
-8회 시작 시의 점수
-경기 종료 시의 점수
-승리 팀
-패배 팀
-경기 날짜 및 시간
-분석 목적: 8회 이후 역전승이 발생하는 빈도를 파악하고, 역전승을 하는 팀의 특성을 분석하여 어떤 요인이 역전승에 영향을 미치는지 이해하기
-2. 데이터 수집 및 전처리
-공식 리그 데이터베이스나 스포츠 통계 웹사이트에서 야구 경기 결과 데이터를 수집합니다.
-필요한 데이터만 추출하고, 결측치나 이상치를 정리합니다.
-8회 초에 시작한 경기와 그 이후 점수가 변화한 경기만 선별합니다.
-3. 데이터 분석
-역전승을 달성한 경기와 그렇지 않은 경기를 분류합니다.
-역전승 비율을 계산하고, 시즌별 또는 팀별로 역전승이 발생하는 패턴을 분석합니다.
-역전승이 일어난 경기의 특징을 분석하여, 역전승에 영향을 미치는 주요 요인을 도출합니다 (예: 홈/어웨이 경기, 주요 선수의 기여도 등).
-4. 결과 해석 및 보고
-분석 결과를 통해 얻은 인사이트를 구체적으로 기술합니다.
-데이터와 분석 결과를 바탕으로, 역전승의 가능성을 높이기 위한 전략이나 제안을 도출합니다.
+분석 목적
+- 이 데이터를 통해, 수면의 질과 수면 시간에 영향을 미치는 주요 요인들을 파악합니다.
+- 수면 장애 유무에 관련된 주요 요인들을 파악하여, 이를 기반으로 예방 및 생활 패턴 개선 방안을 모색합니다.
+
+## 분석 과정
+1. Descriptive Statistics: Numeric data(Age, Sleep duration, Quality of Sleep, Physical Activity Lvel, Stress Level, Blood Pressure, Heart Rate, Daily Steps)에 대해 Average, Variation을 각각 구합니다.
+2. Correlation Analysis: Multiple Linear regression을 통해 predictors 간의 correlation을 분석하여 수면에 영향을 미치는 요인을 파악하고, 영향도를 분석합니다.
+3. Group Comparisons: BMI category, Sleep Disorder에 따라 Quality of Sleep을 구분합니다.
+4. Visual Analysis: 2번의 결과에 따라 significant 한 relationship을 plot으로 나타냅니다. 그리고 3번의 결과에 따라 KNN을 통해 visualize 합니다.
+5. Recommendation: 위의 분석을 통해 수면의 질을 올릴 수 있는 guideline을 제시합니다.
+6. Predictive model: 2번의 결과에 따라 
