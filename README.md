@@ -19,9 +19,8 @@ keggle에 존재하는 수면 건강과 생활 습관에 대한 데이터를 통
 - 수면 장애 유무에 관련된 주요 요인들을 파악하여, 이를 기반으로 예방 및 생활 패턴 개선 방안을 모색합니다.
 
 ## 분석 과정
-1. Descriptive Statistics: Numeric data(Age, Sleep duration, Quality of Sleep, Physical Activity Lvel, Stress Level, Blood Pressure, Heart Rate, Daily Steps)에 대해 Average, Variation을 각각 구합니다.
-2. Correlation Analysis: Multiple Linear regression을 통해 predictors 간의 correlation을 분석하여 수면에 영향을 미치는 요인을 파악하고, 영향도를 분석합니다.
-3. Group Comparisons: BMI category, Sleep Disorder에 따라 Quality of Sleep을 구분합니다.
-4. Visual Analysis: 2번의 결과에 따라 significant 한 relationship을 plot으로 나타냅니다. 그리고 3번의 결과에 따라 KNN을 통해 visualize 합니다.
+1. Correlation Analysis: Multiple Linear regression을 통해 predictors 간의 correlation을 분석하여 수면에 영향을 미치는 요인을 파악하고, 영향도를 분석합니다.
+2. Group Comparisons: BMI category, Sleep Disorder에 따라 Quality of Sleep을 구분합니다.
+3. Resampling: cross-validation을 통해서 1,2 의 결과로 얻은 model의 정확도를 최대한 증가시킵니다.
+4. Visual Analysis: 1번의 결과에 따라 significant 한 relationship을 plot으로 나타냅니다. 그리고 2번의 결과에 따라 KNN을 통해 visualize 합니다.
 5. Recommendation: 위의 분석을 통해 수면의 질을 올릴 수 있는 guideline을 제시합니다.
-6. Predictive model: 2번의 결과에 따라 
